@@ -7,6 +7,9 @@ const screen = {
         <div class="user-info flex-col-center">
             <h2 class="user-name">${user.name || 'Usuario não possuei nome😢'}</h2>
             <p class="user-bio">${user.bio || 'Usuario não possue bio😢'}</p>
+            <div class="num-follow flex-center">
+                <span>Followers: ${user.followers}</span> <span>Following: ${user.following}</span>
+            </div>
         </div>
     </div>`
 

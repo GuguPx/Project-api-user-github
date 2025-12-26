@@ -15,9 +15,10 @@ async function getUserData() {
   const userData = await getUser(username);
   if(userData.message === 'Not Found'){
     return alert('Usuario invalido')}
-  const userRepos = await getRepositories(username);
-  user.setInfo(userData);
-  user.setRepositories(userRepos);
+    const userRepos = await getRepositories(username);
+    user.setInfo(userData);
+    user.setRepositories(userRepos);
+    console.log(user)
   screen.renderUser(user);
 }
 btnSearch.addEventListener("click", getUserData);
