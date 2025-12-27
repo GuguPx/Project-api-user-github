@@ -80,11 +80,11 @@ main {
 .repos-link {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   word-break: break-word;
   overflow-wrap: anywhere;
-
   padding: 1.2rem 1.6rem;
   font-size: clamp(1.2rem, 2vw, 1.6rem);
   background-color: rgb(36, 40, 46);
@@ -92,20 +92,22 @@ main {
   border-radius: 0.8rem;
   font-weight: 500;
   cursor: pointer;
-
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
-
 .repos-link:hover {
   background-color: #6a6974;
 }
-
 .repos-link:active {
   transform: scale(0.96);
 }
 .repos .repos-link:focus-visible {
   outline: 5px solid #fff;
   outline-offset: 4px;
+}
+.repo-info span{
+  background-color:#6756cc;
+  padding: 5px;
+  border-radius: 20px;
 }
 
 @media (max-width: 650px) {

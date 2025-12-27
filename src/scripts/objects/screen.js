@@ -8,13 +8,22 @@ const screen = {
             <h2 class="user-name">${user.name || 'Usuario não possuei nome😢'}</h2>
             <p class="user-bio">${user.bio || 'Usuario não possue bio😢'}</p>
             <div class="num-follow flex-center">
-                <span>Followers: ${user.followers}</span> <span>Following: ${user.following}</span>
+                <span>👥Followers: ${user.followers}</span> <span>👥Following: ${user.following}</span>
             </div>
         </div>
     </div>`
 
     let RepositoriesItens = '';
-    user.repositories.forEach(repo => RepositoriesItens += `<li class="repos"><a href="${repo.html_url}"target="_blank" class="repos-link">${repo.name}</a></li>`)
+    user.repositories.forEach(repo => RepositoriesItens += `<li class="repos">
+<a href="${repo.html_url}"target="_blank" class="repos-link">${repo.name}
+<div class="repo-info">
+    <span>🍴${repo.forks}</span>
+    <span>⭐${repo.stargazers_count}</span>
+    <span>👀${repo.watchers}</span>
+    <span>🧩${repo.language}</span>
+</div>
+</a>
+</li>`)
 
     if(user.repositories.length > 0){
         this.userProfile.innerHTML += `<div class="result-repos flex-align-center"><h2 class="repos-title">Repositorios</h2><ul class="result-repos-list">${RepositoriesItens}</ul></div>`
